@@ -1,0 +1,7 @@
+Plugin 'hukl/Smyck-Color-Scheme'
+Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/Wombat'
+Plugin 'baskerville/bubblegum'
+Plugin 'SirVer/ultisnips'
+Plugin 'Yggdroot/indentLine'
+Plugin 'wavded/vim-stylus'

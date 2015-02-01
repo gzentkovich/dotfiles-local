@@ -1,0 +1,32 @@
+" I like using the thoughtbot dotfiles and then customizing it here.
+
+colorscheme bubblegum
+let g:airline_theme="bubblegum"
+set background=dark
+
+" non-standard, but very quick moment between modes.
+map ; :
+imap jk <Esc>
+set noshowmode
+
+" set textwidth to n and set colorcolumn from n and beyond (relative) 
+" to a lighter color, easier on the eyes.
+set textwidth=80
+execute "set colorcolumn=" . join(map(range(2,259), '"+" . v:val'), ',')
+
+" vim-powerline symbols
+let g:airline_left_sep          = '⮀'
+let g:airline_left_alt_sep      = '⮁'
+let g:airline_right_sep         = '⮂'
+let g:airline_right_alt_sep     = '⮃'
+let g:airline_branch_prefix     = '⭠'
+let g:airline_readonly_symbol   = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
+
+" for Java development snippets
+" let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
+
+" vertical line indentation
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#09AA08'
+let g:indentLine_char = '|'
