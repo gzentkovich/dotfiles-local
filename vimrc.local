@@ -24,9 +24,29 @@ let g:airline_readonly_symbol   = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
 
 " for Java development snippets
-" let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForward="<c-b>"
+" let g:UlitSnipsJumpBackward="<c-z>"
+
 
 " vertical line indentation
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '|'
+
+" for java eclim setup | hiding for now until I understand how this works.
+" use 4 spaces for tabs
+" set tabstop=4 softtabstop=4 shiftwidth=4
+
+" display indentation guides
+" set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+
+" convert spaces to tabs when reading file
+" autocmd! bufreadpost * set noexpandtab | retab! 4
+
+" convert tabs to spaces before writing file
+" autocmd! bufwritepre * set expandtab | retab! 4
+
+" convert spaces to tabs after writing file (to show guides again)
+" autocmd! bufwritepost * set noexpandtab | retab! 4

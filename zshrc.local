@@ -2,11 +2,32 @@
 # # * ~/.path can be used to extend `$PATH`
 # # * ~/.extra can be used for other settings you don’t want to commit.
 
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do 
+for file in ~/.{path,exports,aliases,functions,extra}; do 
   [ -r "$file" ] && source "$file"
 done
-
 unset file
+
+# GROOVY_HOME
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 export OMNIAUTH_PROVIDER_KEY=""
 export OMNIAUTH_PROVIDER_SECRET=""
+
+export JENV_ROOT=/usr/local/opt/jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# if which pyenv-virtualenv-init > /dev/null; then
+#   eval "$(pyenv virtualenv-init -)";
+# fi
+
+# set rbenv first in PATH variable
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# load rbenv if available
+if which rbenv &>/dev/null ; then
+  eval "$(rbenv init - --no-rehash)"
+fi

@@ -1,2 +1,2 @@
-export OMNIAUTH_PROVIDER_KEY=""
-export OMNIAUTH_PROVIDER_SECRET=""
+
+export PATH="$HOME/.bin:/usr/local/sbin:$HOME/.node/bin:$PATH"

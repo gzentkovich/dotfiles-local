@@ -1,0 +1,32 @@
+# showa: to remind yourself of an alias (given some part of it)
+showa () { grep -i -a1 $@ ~/.aliases | grep -v '^\s*$' ; }
+
+# sourcea: to source this file (to make changes active after editing)
+alias srca='source ~/.aliases'
+
+# Empty Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Enable aliases to be sudo'ed
+alias sudo='sudo '
+
+# Fix files permissions on downloaded apps
+alias fixfiles="find . -type f -exec chmod 644 {} \;"
+
+# Fix directory permissions on downloaded apps
+alias fixdir="find . -type d -exec chmod 755 {} \;"
+
+# Remove all npm packages, to start over (hopefully).
+alias npmclean="npm ls -gp | awk -F/ '/node_modules/ && !/node_modules.*node_modules/ {print $NF}' | xargs npm -g rm"
+
+alias grep='grep --color=auto'
+
+# python shorty
+alias p='python'
+
+# python functional tests
+alias pm='python manage.py'
+
+# python django new project
+alias psp='python startproject'
