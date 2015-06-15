@@ -30,3 +30,18 @@ alias pm='python manage.py'
 
 # python django new project
 alias psp='python startproject'
+
+# fix disabled volume control in tasktray
+alias fixaudio="sudo killall coreaudiod"
+
+# Alias for quick clear screen
+alias c='clear'
+
+# Quick and ugly rspec fix
+alias rspec='bundle exec rspec'
+
+# Remove @ from in the download folder
+alias rmat='xattr -d'
+
+# Clear all attributes
+alias rmall='xattr -c'

@@ -1,0 +1,3 @@
+" hide toolbar and scrollbars
+set guioptions-=T
+set guioptions-=r

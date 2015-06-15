@@ -1,7 +1,9 @@
-" I like using the thoughtbot dotfiles and then customizing it here.
-
+" to enable matchit and text objects for ruby blocks.
+runtime macros/matchit.vim
 colorscheme bubblegum
 let g:airline_theme="bubblegum"
+let g:airline_powerline_fonts = 1
+
 set background=dark
 
 " non-standard, but very quick moment between modes.
@@ -29,6 +31,9 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
 " let g:UltiSnipsJumpForward="<c-b>"
 " let g:UlitSnipsJumpBackward="<c-z>"
 
+" fix hiding double quotes in json files by default
+let g:vim_json_syntax_conceal = 0
+"set conceallevel=0
 
 " vertical line indentation
 let g:indentLine_color_term = 239
@@ -50,3 +55,64 @@ let g:indentLine_char = '|'
 
 " convert spaces to tabs after writing file (to show guides again)
 " autocmd! bufwritepost * set noexpandtab | retab! 4
+
+" set hybrid line number mode
+set relativenumber
+set number
+
+let g:rspec_command = "!rspec --drb {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
+
+" toggle between paste (ctrl-v) nopaste
+set pastetoggle=<F2>
+
+" search configs
+set incsearch
+set hlsearch
+nmap <leader>h :nohlsearch<cr>
+set ignorecase
+set smartcase
+
+" window splits configs i.e. focused windows expands
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
+" Run a cucumber scenario or rspec spec
+function RunCurrentTest()
+  execute "!" . CorrectTestRunner() "--drb" expand('%:p')
+endfunction
+
+function RunCurrentLineInTest()
+  execute "!" . CorrectTestRunner() "--drb" expand('%:p') . ":" . line(".")
+endfunction
+
+function CorrectTestRunner()
+  if match(expand('%'), '\.feature$') != -1
+    return "cucumber"
+  elseif match(expand('%'), '_spec\.rb$') != -1
+    return "rspec"
+  endif
+endfunction
+
+" get URL from line
+function ExtractUrlFromCurrentLine()
+  return matchstr(getline("."), "http[^ ]*")
+endfunction
+
+function! OpenUrlOnCurrentLineInBrowser()
+  let url = ExtractUrlFromCurrentLine()
+  exec "!open" url
+endfunction
+
+" call function above to open a URL on a line
+" in your browser 
+map <leader>ra :call RunCurrentLineInTest()<cr>
+map <leader>rt :call RunCurrentLineInTest()<cr>
+map <leader>vs :VtrSendCommandToRunner<cr>
+map <leader>va :VtrAttachToPane<cr>

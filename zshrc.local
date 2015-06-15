@@ -12,6 +12,10 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 export OMNIAUTH_PROVIDER_KEY=""
 export OMNIAUTH_PROVIDER_SECRET=""
+# export SECRET_KEY_BASE="c33efb6180f2659a24a2cab43950a5c41d9e96469cb30634e7a5ed47b1c08fb5"
+export SECRET_KEY_BASE="jbl55c33efb6180f2659a24a2cab43950a5c41d9e96469cb30634e7a5ed47b1c08fb5"
+export S3_KEY=""
+export S3_SECRET=""
 
 export JENV_ROOT=/usr/local/opt/jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
