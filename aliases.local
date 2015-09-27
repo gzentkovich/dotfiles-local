@@ -9,7 +9,7 @@ alias srca='source ~/.aliases'
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Enable aliases to be sudo'ed
-alias sudo='sudo '
+#alias sudo='sudo '
 
 # Fix files permissions on downloaded apps
 alias fixfiles="find . -type f -exec chmod 644 {} \;"

@@ -1,7 +1,5 @@
-" to enable matchit and text objects for ruby blocks.
-runtime macros/matchit.vim
-colorscheme bubblegum
-let g:airline_theme="bubblegum"
+colorscheme smyck
+let g:airline_theme="powerlineish"
 let g:airline_powerline_fonts = 1
 
 set background=dark
@@ -11,19 +9,22 @@ map ; :
 imap jk <Esc>
 set noshowmode
 
+" highlight ColorColumn ctermbg=235 guibg=#2c2d27
+highlight colorcolumn ctermbg=234 guibg=#1c1c1c
+
 " set textwidth to n and set colorcolumn from n and beyond (relative) 
 " to a lighter color, easier on the eyes.
 set textwidth=80
 execute "set colorcolumn=" . join(map(range(2,259), '"+" . v:val'), ',')
 
 " vim-powerline symbols
-let g:airline_left_sep          = '⮀'
-let g:airline_left_alt_sep      = '⮁'
-let g:airline_right_sep         = '⮂'
-let g:airline_right_alt_sep     = '⮃'
-let g:airline_branch_prefix     = '⭠'
-let g:airline_readonly_symbol   = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
+let g:airline_left_sep          = ''
+let g:airline_left_alt_sep      = ''
+let g:airline_right_sep         = ''
+let g:airline_right_alt_sep     = ''
+let g:airline_branch_prefix     = ''
+let g:airline_readonly_symbol   = ''
+let g:airline_linecolumn_prefix = ''
 
 " for Java development snippets
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
