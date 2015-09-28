@@ -2,6 +2,13 @@ colorscheme smyck
 let g:airline_theme="powerlineish"
 let g:airline_powerline_fonts = 1
 
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+" set line spacing in Terminal Fonts Dialog to 0.943
+set guifont=Andale\ Mono\ for\ Powerline:h14
 set background=dark
 
 " non-standard, but very quick moment between modes.
@@ -9,7 +16,9 @@ map ; :
 imap jk <Esc>
 set noshowmode
 
-" highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" need to set highlight colorcolumn now, or the default
+" red color from the .vimrc base file will display.
+" this is a muted black color
 highlight colorcolumn ctermbg=234 guibg=#1c1c1c
 
 " set textwidth to n and set colorcolumn from n and beyond (relative) 
@@ -18,13 +27,15 @@ set textwidth=80
 execute "set colorcolumn=" . join(map(range(2,259), '"+" . v:val'), ',')
 
 " vim-powerline symbols
-let g:airline_left_sep          = ''
-let g:airline_left_alt_sep      = ''
-let g:airline_right_sep         = ''
-let g:airline_right_alt_sep     = ''
-let g:airline_branch_prefix     = ''
-let g:airline_readonly_symbol   = ''
-let g:airline_linecolumn_prefix = ''
+" special note: need to add let g:airline_symbols = {}
+" for these symbols to work
+let g:airline_left_sep          = '⮀'
+let g:airline_left_alt_sep      = '⮁'
+let g:airline_right_sep         = '⮂'
+let g:airline_right_alt_sep     = '⮃'
+let g:airline_branch_prefix     = '⭠'
+let g:airline_readonly_symbol   = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
 
 " for Java development snippets
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
