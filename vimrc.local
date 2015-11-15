@@ -23,6 +23,7 @@ highlight colorcolumn ctermbg=234 guibg=#1c1c1c
 
 " set textwidth to n and set colorcolumn from n and beyond (relative) 
 " to a lighter color, easier on the eyes.
+"
 set textwidth=80
 execute "set colorcolumn=" . join(map(range(2,259), '"+" . v:val'), ',')
 
@@ -33,12 +34,12 @@ let g:airline_left_sep          = '⮀'
 let g:airline_left_alt_sep      = '⮁'
 let g:airline_right_sep         = '⮂'
 let g:airline_right_alt_sep     = '⮃'
-let g:airline_branch_prefix     = '⭠'
-let g:airline_readonly_symbol   = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
+let g:airline_symbols.branch    = '⭠'
+let g:airline_symbols.readonly  = '⭤'
+let g:airline_symbols.linenr    = '⭡'
 
 " for Java development snippets
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
+" let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
 " let g:UltiSnipsExpandTrigger="<tab>"
 " let g:UltiSnipsJumpForward="<c-b>"
 " let g:UlitSnipsJumpBackward="<c-z>"
@@ -68,9 +69,15 @@ let g:indentLine_char = '|'
 " convert spaces to tabs after writing file (to show guides again)
 " autocmd! bufwritepost * set noexpandtab | retab! 4
 
+" set your tab preference
+set tabstop=2 softtabstop=2 shiftwidth=2
+
 " set hybrid line number mode
 set relativenumber
 set number
+
+" no byte-order marks (BOM)
+set nobomb
 
 let g:rspec_command = "!rspec --drb {spec}"
 let g:rspec_command = "Dispatch rspec {spec}"
@@ -128,3 +135,8 @@ map <leader>ra :call RunCurrentLineInTest()<cr>
 map <leader>rt :call RunCurrentLineInTest()<cr>
 map <leader>vs :VtrSendCommandToRunner<cr>
 map <leader>va :VtrAttachToPane<cr>
+
+" turn syntastic off for HTML
+" now must explicitly call it :SyntasticCheck
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let g:airline#extensions#whitespace#enabled = 0

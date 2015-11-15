@@ -17,6 +17,13 @@ alias fixfiles="find . -type f -exec chmod 644 {} \;"
 # Fix directory permissions on downloaded apps
 alias fixdir="find . -type d -exec chmod 755 {} \;"
 
+# Actually convert dos/windows formatted file to unix
+alias fixjs="find . -name '*.js' |xargs dos2unix"
+alias fixhtm="find . -name '*.html' |xargs dos2unix"
+
+# In case I forget
+alias fixhtml=fixhtm
+
 # Remove all npm packages, to start over (hopefully).
 alias npmclean="npm ls -gp | awk -F/ '/node_modules/ && !/node_modules.*node_modules/ {print $NF}' | xargs npm -g rm"
 
@@ -45,3 +52,50 @@ alias rmat='xattr -d'
 
 # Clear all attributes
 alias rmall='xattr -c'
+
+# To call mocha when locally installed
+alias motest='./node_modules/mocha/bin/mocha'
+
+# To manually start MongoDB
+alias mostart='mongod --config /usr/local/etc/mongod.conf'
+
+# Brew services start command
+alias brewst='brew services start'
+
+alias brewre='brew services restart'
+
+alias brewsp='brew services stop'
+
+# make a quick screenshot for wordpress
+alias mkpng='convert -size 880x660 xc:tomato screenshot.png'
+
+# bundle exec shortcut
+alias rake='bundle exec rake'
+
+# default the tree command to color mode
+alias tree='tree -C'
+
+# testing aliases for directories
+alias cv='cd ~/Projects/test-layouts/protected/views/'
+alias cvm='cd ~/Projects/test-layouts/protected/views/main/'
+
+# suffix aliases
+alias -s rb=vim
+alias -s js=vim
+alias -s log='less -MN'
+
+# global (e.g. -g) aliases
+alias -g gp=' | grep -i'
+
+# turn wifi on/off (caveat: need to link airport)
+alias won='networksetup -setairportpower airport on'
+alias wof='networksetup -setairportpower airport off'
+
+# sure this was done before
+alias vi='vim'
+
+# quick shortcuts for common navigation
+alias dk='cd ~/Desktop'
+alias dw='cd ~/Downloads'
+alias cl='c && ls'
+alias cs='c && ll'

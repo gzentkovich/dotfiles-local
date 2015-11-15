@@ -7,29 +7,18 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done
 unset file
 
-# GROOVY_HOME
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
-
-export OMNIAUTH_PROVIDER_KEY=""
-export OMNIAUTH_PROVIDER_SECRET=""
-export S3_KEY=""
-export S3_SECRET=""
-
-export JENV_ROOT=/usr/local/opt/jenv
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# if which pyenv-virtualenv-init > /dev/null; then
-#   eval "$(pyenv virtualenv-init -)";
-# fi
-
-# set rbenv first in PATH variable
-export PATH="$HOME/.rbenv/bin:$PATH"
+# PHP56 Internalization Module Path (Non-Standard Location)
+export LD_LIBRARY_PATH=/usr/local/opt/php56-intl/
 
 # load rbenv if available
-if which rbenv &>/dev/null ; then
-  eval "$(rbenv init - --no-rehash)"
-fi
+# if which rbenv &>/dev/null ; then
+#   eval "$(rbenv init - --no-rehash)"
+# fi
+
+# export PATH="$HOME/.bin:/usr/local/sbin:$HOME/.node/bin:$PATH"
+
+# ensure dotfiles bin directory is loaded first
+# export PATH="$HOME/.bin:$PYENV_ROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+# export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"

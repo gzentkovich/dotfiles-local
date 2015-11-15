@@ -1,7 +1,7 @@
 
 unbind C-b
-set -g prefix C-s
-bind-key -r C-s send-prefix
+set -g prefix C-g
+bind-key -r C-g send-prefix
 
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded!"
 
@@ -16,8 +16,14 @@ bind -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 set-option -g default-terminal "screen-256color"
 set-option -g status-keys "emacs"
 
-set -g status-bg '#305366'
-set -g status-fg '#CED1D9'
+# status bar colors
+set -g status-bg '#F44647'
+set -g status-fg '#F9F9F9'
+
+# active | non-active pane colors
+set -g pane-border-fg '#F9F9F9'
+set -g pane-active-border-fg '#F44647'
+set -g pane-active-border-bg default
 
 set -g status-left-length 50
 
