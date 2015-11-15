@@ -10,15 +10,3 @@ unset file
 # PHP56 Internalization Module Path (Non-Standard Location)
 export LD_LIBRARY_PATH=/usr/local/opt/php56-intl/
 
-# load rbenv if available
-# if which rbenv &>/dev/null ; then
-#   eval "$(rbenv init - --no-rehash)"
-# fi
-
-# export PATH="$HOME/.bin:/usr/local/sbin:$HOME/.node/bin:$PATH"
-
-# ensure dotfiles bin directory is loaded first
-# export PATH="$HOME/.bin:$PYENV_ROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-# export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
