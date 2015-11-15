@@ -139,4 +139,6 @@ map <leader>va :VtrAttachToPane<cr>
 " turn syntastic off for HTML
 " now must explicitly call it :SyntasticCheck
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+" disable the trailing whitespace warning
 let g:airline#extensions#whitespace#enabled = 0
