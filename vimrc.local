@@ -1,5 +1,5 @@
-colorscheme smyck
-let g:airline_theme="powerlineish"
+colorscheme colorsbox-stnight
+let g:airline_theme="raven"
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
@@ -28,8 +28,6 @@ set textwidth=80
 execute "set colorcolumn=" . join(map(range(2,259), '"+" . v:val'), ',')
 
 " vim-powerline symbols
-" special note: need to add let g:airline_symbols = {}
-" for these symbols to work
 let g:airline_left_sep          = '⮀'
 let g:airline_left_alt_sep      = '⮁'
 let g:airline_right_sep         = '⮂'
@@ -38,11 +36,14 @@ let g:airline_symbols.branch    = '⭠'
 let g:airline_symbols.readonly  = '⭤'
 let g:airline_symbols.linenr    = '⭡'
 
-" for Java development snippets
-" let g:UltiSnipsSnippetDirectories=["UltiSnips", "ultisnips"]
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForward="<c-b>"
-" let g:UlitSnipsJumpBackward="<c-z>"
+" airline tomato config
+let g:airline_powerline_fonts = 1
+let g:tomato#interval = 20 * 60
+let g:tomato#rest_time = 5 * 60
+let g:tomato#remind = " \uf003 "
+let g:tomato#restinfo = " \ue1f1 "
+let g:tomato#show_clock = 1
+let g:tomato#show_count_down = 1
 
 " fix hiding double quotes in json files by default
 let g:vim_json_syntax_conceal = 0
@@ -52,22 +53,6 @@ let g:vim_json_syntax_conceal = 0
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '|'
-
-" for java eclim setup | hiding for now until I understand how this works.
-" use 4 spaces for tabs
-" set tabstop=4 softtabstop=4 shiftwidth=4
-
-" display indentation guides
-" set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
-
-" convert spaces to tabs when reading file
-" autocmd! bufreadpost * set noexpandtab | retab! 4
-
-" convert tabs to spaces before writing file
-" autocmd! bufwritepre * set expandtab | retab! 4
-
-" convert spaces to tabs after writing file (to show guides again)
-" autocmd! bufwritepost * set noexpandtab | retab! 4
 
 " set your tab preference
 set tabstop=2 softtabstop=2 shiftwidth=2
@@ -142,3 +127,20 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " disable the trailing whitespace warning
 let g:airline#extensions#whitespace#enabled = 0
+
+
+let g:SimylFold_docstring_preview=1
+
+" experimenting (added 1/23/2016
+set cursorline    " highlight current line
+set wildmenu      " visual autocomplete for command menu
+set lazyredraw    " redraw only when needed
+set showmatch     " highlight matching [{()}]
+nnoremap j gj
+nnoremap k gk
+nnoremap B ^
+nnoremap E $
+nnoremap $ <nop>
+nnoremap ^ <nop>
+nnoremap gV `[v`]
+

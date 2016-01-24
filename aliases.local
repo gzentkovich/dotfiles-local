@@ -1,3 +1,4 @@
+# Snippets from some pretty clever people on Github =)
 # showa: to remind yourself of an alias (given some part of it)
 showa () { grep -i -a1 $@ ~/.aliases | grep -v '^\s*$' ; }
 
@@ -61,9 +62,7 @@ alias mostart='mongod --config /usr/local/etc/mongod.conf'
 
 # Brew services start command
 alias brewst='brew services start'
-
 alias brewre='brew services restart'
-
 alias brewsp='brew services stop'
 
 # make a quick screenshot for wordpress
@@ -99,3 +98,25 @@ alias dk='cd ~/Desktop'
 alias dw='cd ~/Downloads'
 alias cl='c && ls'
 alias cs='c && ll'
+alias mkdir='mkdir -p'
+
+# aliases for easy git-crawl movement
+alias next='git crawl master'
+alias prev='git checkout HEAD^1'
+
+# start firefox developers edition
+#alias Firefox='/Applications/FirefoxDeveloperEdition.app/Contents/MacOS/firefox-bin --kiosk'
+
+# start chrome from terminal
+# alias Chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk'
+
+# start selenium server standalone
+alias sss='selenium-server -p 4444'
+
+# start webdriver
+alias webu='node node_modules/webdriver-manager/bin/webdriver-manager update'
+
+alias webs='node node_modules/webdriver-manager/bin/webdriver-manager start'
+alias angs='node node_modules/angular-dev-server/index.js'
+alias pros='node node_modules/protractor/bin/protractor protractor/conf.js'
+

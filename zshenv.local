@@ -3,3 +3,7 @@
 # # ensure dotfiles bin directory is loaded first
 # export PATH="$HOME/.bin:$PYENV_ROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 # export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+
+
+# ensure dotfiles bin directory is loaded first
+export PATH="$HOME/.bin:/usr/local/bin:$PATH"
