@@ -142,5 +142,5 @@ nnoremap B ^
 nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
-nnoremap gV `[v`]
+" nnoremap gV `[v`]
 

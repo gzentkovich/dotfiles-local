@@ -119,4 +119,4 @@ alias webu='node node_modules/webdriver-manager/bin/webdriver-manager update'
 alias webs='node node_modules/webdriver-manager/bin/webdriver-manager start'
 alias angs='node node_modules/angular-dev-server/index.js'
 alias pros='node node_modules/protractor/bin/protractor protractor/conf.js'
-
+# usermod -aG vboxsf $USER
