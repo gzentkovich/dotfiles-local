@@ -104,12 +104,6 @@ alias mkdir='mkdir -p'
 alias next='git crawl master'
 alias prev='git checkout HEAD^1'
 
-# start firefox developers edition
-#alias Firefox='/Applications/FirefoxDeveloperEdition.app/Contents/MacOS/firefox-bin --kiosk'
-
-# start chrome from terminal
-# alias Chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk'
-
 # start selenium server standalone
 alias sss='selenium-server -p 4444'
 
